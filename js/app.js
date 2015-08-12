@@ -1,4 +1,4 @@
-var app = angular.module('myCV', ['pascalPrecht.translate']);
+var app = angular.module('myCV', ['pascalPrecht.translate' ,'noCAPTCHA'] );
 
 app.config(['$translateProvider', function ($translateProvider) {
   $translateProvider.useSanitizeValueStrategy(null);
