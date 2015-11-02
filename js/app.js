@@ -1,4 +1,4 @@
-var app = angular.module('myCV', ['pascalPrecht.translate' ,'noCAPTCHA'] );
+var app = angular.module('myCV', ['pascalPrecht.translate' ,'noCAPTCHA', 'angular-scroll-animate'] );
 
 app.config(['$translateProvider', function ($translateProvider) {
   $translateProvider.useSanitizeValueStrategy(null);
@@ -82,6 +82,17 @@ app.controller('MainController', function ($scope, $translate, ListLangs, ListPr
   $scope.changeLanguage = function (key) {
     $translate.use(key);
   };
+
+  $scope.animateElementIn = function($el) {
+    $el.removeClass('hidden');
+    $el.addClass('animated fadeInUp'); // this example leverages animate.css classes
+  };
+
+  $scope.animateElementOut = function($el) {
+    $el.addClass('hidden');
+    $el.removeClass('animated fadeInUp'); // this example leverages animate.css classes
+  };
+
 
   $scope.userData = {
     forename: 'Vincent',
@@ -192,6 +203,9 @@ $scope.skills_AdminOther = [{
                   }];
 
 });
+
+
+
 /**
  * Ng-Repeat implementation working with number ranges.
  *

@@ -2,6 +2,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*font-family: 'Lato', Calibri, Arial, sans-serif;*/
     color: #fff;
     background-color: #000;
 }
@@ -626,25 +627,103 @@ figcaption:hover .bodyprojcet{
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
-.Toollvl1, .Toollvl2, .Toollvl3, .Toollvl4, .Toollvl5{
-  background-color: #cccccc;
-  color: #FFF;
-  border-radius: 20px;
-  margin: 25px;
-  padding: 0.5% 2% 0.5% 4%;
-}
-.Toollvl1{
+
+.Toollvl1 a{
   font-size: 15px;
 }
-.Toollvl2{
+.Toollvl2 a{
   font-size: 18px;
 }
-.Toollvl3{
+.Toollvl3 a{
   font-size: 20px;
 }
-.Toollvl4{
+.Toollvl4 a{
   font-size: 24px;
 }
-.Toollvl5{
+.Toollvl5 a{
   font-size: 28px;
+}
+
+.tags{
+	margin: 10px;
+	padding: 10px;
+	right:24px;
+	list-style:none;
+	}
+
+  .tags li, .tags a{
+  float:left;
+  height:24px;
+	line-height:24px;
+	position:relative;
+  margin-bottom: 10px;
+	}
+
+  .tags a{
+	margin-left:20px;
+	padding:0 10px 0 12px;
+	background:#363636;
+	color:#fff;
+	text-decoration:none;
+	-moz-border-radius-bottomright:4px;
+	-webkit-border-bottom-right-radius:4px;
+	border-bottom-right-radius:4px;
+	-moz-border-radius-topright:4px;
+	-webkit-border-top-right-radius:4px;
+	border-top-right-radius:4px;
+	}
+
+  .tags a:before{
+	content:"";
+	float:left;
+	position:absolute;
+	top:0;
+	left:-12px;
+	width:0;
+	height:0;
+	border-color:transparent #363636 transparent transparent;
+	border-style:solid;
+	border-width:12px 12px 12px 0;
+	}
+
+  .tags a:after{
+	content:"";
+	position:absolute;
+	top:10px;
+	left:0;
+	float:left;
+	width:4px;
+	height:4px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	background:#fff;
+	-moz-box-shadow:-1px -1px 2px #004977;
+	-webkit-box-shadow:-1px -1px 2px #004977;
+	box-shadow:-1px -1px 2px #004977;
+	}
+
+  .tags a:hover{
+    background:#555;
+  }
+
+  .tags a:hover:before{
+    border-color:transparent #555 transparent transparent;
+  }
+
+  .hidden {
+  visibility: hidden;
+  }
+
+  /* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }
