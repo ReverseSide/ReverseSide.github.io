@@ -20,6 +20,8 @@
     <!-- Circle Pourcent -->
     <link href="css/circle.css" rel="stylesheet">
 
+    <link href="css/animate.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -132,12 +134,12 @@
             <div class="row">
               <div class="col-lg-10 col-lg-offset-1">
                     <h4>{{'Programmation_Skills' | translate}}</h4>
-                          <div class="col-lg-6 wrap_skill_img">
-                            <img src="img/mbp.png" class="img-responsive portfolio-img imgleft transitiondelais" alt="">
+                          <div id="mbp" class="col-lg-5 wrap_skill_img">
+                            <img src="img/mbp.png" class="img-responsive portfolio-img" alt="">
                           </div>
-                          <div class="col-lg-6">
+                          <div class="col-lg-7">
                             <h5 class="Skill_Nomargin">Web</h5>
-                            <div class="skill" ng-repeat="skill in skills_ProgWeb">
+                            <div when-visible="animateElementIn" when-not-visible="animateElementOut" class="skill" ng-repeat="skill in skills_ProgWeb">
                               {{skill.title}}
                             <div class="col-lg-4 col-lg-offset-3 right">
                               <i class="fa fa-star" ng-repeat-range to=skill.level></i>
@@ -175,21 +177,22 @@
                   </div>
                 </div
               </div>
-              <div class="col-lg-4 wrap_skill_img">
-                <img src="img/server.png" class="img-responsive portfolio-img imgright transitiondelais" alt="">
+              <div id="server" class="col-lg-4 wrap_skill_img">
+                <img src="img/server.png" class="img-responsive portfolio-img" alt="">
               </div>
             </div>
                 <div class="col-lg-10 col-lg-offset-1">
-                  <hr class="star-light"/>
-                      <h4>{{'Tools' | translate}}</h4>
-                      <span ng-repeat="tool in tools" class="Toollvl{{tool.level}}">
-                         {{tool.title}}
-                       </span>
+                  <h4>{{'Tools' | translate}}</h4>
+                      <ul class="tags">
+
+                       <li ng-repeat="tool in tools"><a href="#">{{tool.title}}</a></li>
+                      </ul>
+
                 </div>
-                <div class="col-lg-10 col-lg-offset-1">
+                <div class="col-lg-10 row row-centered">
                   <hr class="star-light"/>
                       <h4>{{'Languages' | translate}}</h3>
-                      <div ng-repeat="lang in langs" class="col-lg-2 col-lg-offset-1">
+                      <div ng-repeat="lang in langs" class="col-lg-2 col-lg-offset-1 col-centered">
                         <div class="c100 p{{lang.langlvl}}">
                           <span>{{lang.key | translate}} <br>{{lang.detail | translate}}</span>
                           <div class="slice">
@@ -279,15 +282,16 @@
                               </div>
                           </div>
                           <br>
-                          <no-captcha
-                              g-recaptcha-response="gRecaptchaResponse"
-                              theme='light'
-                              control="noCaptchaControl"
-                              site-key="6LcMGQsTAAAAAD-5r_CKBSdci_DiHX3MIjslsPgx">
-                          </no-captcha>
-                          <div id="success"></div>
                           <div class="row">
-                              <div class="form-group col-xs-12">
+                            <div class="col-xs-5">
+                              <no-captcha
+                                  g-recaptcha-response="gRecaptchaResponse"
+                                  theme='light'
+                                  control="noCaptchaControl"
+                                  site-key="6LcMGQsTAAAAAD-5r_CKBSdci_DiHX3MIjslsPgx">
+                              </no-captcha>
+                            </div>
+                              <div class="form-group col-xs-5">
                                   <button type="submit" class="btn btn-inverse">Send</button>
                               </div>
                           </div>
@@ -356,7 +360,8 @@
 
     <!-- Recaptcha -->
     <script src="js/angular-no-captcha.js"></script>
-
+    <!-- Animation scroll -->
+    <script src="js/angular-scroll-animate.js"></script>
 
   </body>
 </html>
