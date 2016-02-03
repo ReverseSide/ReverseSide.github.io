@@ -23,6 +23,7 @@
     <link href="css/animate.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -37,7 +38,7 @@
   <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="index" ng-controller="MainController" >
 
     <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <nav when-visible="animateElementIn" class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -60,10 +61,19 @@
                         <a class="page-scroll" href="#profile">{{'Profile' | translate}}</a>
                     </li>
                     <li>
+                        <a href="#">//</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#skill">{{'Abilities' | translate}}</a>
                     </li>
                     <li>
+                        <a href="#">//</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#project">{{'Projects' | translate}}</a>
+                    </li>
+                    <li>
+                        <a href="#">//</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -83,9 +93,9 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="" alt="">
                     <div class="intro-text">
-                        <h3 class="brand-heading">Vincent Montet</h3>
-                        <p class="intro-text">Passionned by Technologie</p>
-                        <a href="#profile" class="btn btn-circle page-scroll">
+                        <h3  when-visible="animateElementIn" class="brand-heading">Vincent Montet</h3>
+                        <p  when-visible="animateElementIn" class="intro-text">Passionned by Technologie</p>
+                        <a  when-visible="animateElementIn" href="#profile" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
@@ -96,7 +106,7 @@
     </header>
       <!-- About Section -->
     <section class="success whitesection" id="profile">
-        <div class="container">
+        <div class="container" when-visible="animateElementIn">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>{{'Profile' | translate}}</h2>
@@ -139,7 +149,7 @@
                           </div>
                           <div class="col-lg-7">
                             <h5 class="Skill_Nomargin">Web</h5>
-                            <div when-visible="animateElementIn" when-not-visible="animateElementOut" class="skill" ng-repeat="skill in skills_ProgWeb">
+                            <div class="skill" when-visible="animateElementIn" ng-repeat="skill in skills_ProgWeb">
                               {{skill.title}}
                             <div class="col-lg-4 col-lg-offset-3 right">
                               <i class="fa fa-star" ng-repeat-range to=skill.level></i>
@@ -147,7 +157,7 @@
                             </div>
                           </div>
                             <h5 class="Skill_Nomargin">{{'Other' | translate}}</h5>
-                              <div class="skill" ng-repeat="skill in skills_ProgOther">
+                              <div class="skill" when-visible="animateElementIn" ng-repeat="skill in skills_ProgOther">
                                 {{skill.title}}
                                 <div class="col-lg-4 col-lg-offset-3 right">
                                   <i class="fa fa-star" ng-repeat-range to=skill.level></i>
@@ -160,7 +170,7 @@
                 <h4>{{'Admin_Skills' | translate}}</h4>
                 <div class="col-lg-7">
                   <h5 class="Skill_Nomargin">Windows Server</h5>
-                  <div class="skill" ng-repeat="skill in skills_AdminWin">
+                  <div when-visible="animateElementIn" class="skill" ng-repeat="skill in skills_AdminWin">
                     {{skill.title}}
                     <div class="col-lg-4 col-lg-offset-1 right">
                       <i class="fa fa-star" ng-repeat-range to=skill.level></i>
@@ -168,7 +178,7 @@
                     </div>
                   </div>
                   <h5 class="Skill_Nomargin">{{'Other' | translate}}</h5>
-                  <div class="skill" ng-repeat="skill in skills_AdminOther">
+                  <div when-visible="animateElementIn" class="skill" ng-repeat="skill in skills_AdminOther">
                     {{skill.title}}
                     <div class="col-lg-4 col-lg-offset-1 right">
                       <i class="fa fa-star" ng-repeat-range to=skill.level></i>
@@ -185,14 +195,14 @@
                   <h4>{{'Tools' | translate}}</h4>
                       <ul class="tags">
 
-                       <li ng-repeat="tool in tools"><a href="#">{{tool.title}}</a></li>
+                       <li when-visible="animateElementIn" ng-repeat="tool in tools"><a href="#"><i class={{tool.favicon}}></i>{{tool.title}}</a></li>
                       </ul>
 
                 </div>
-                <div class="col-lg-10 row row-centered">
+                <div class="col-lg-10 col-lg-offset-1 row row-centered">
                   <hr class="star-light"/>
                       <h4>{{'Languages' | translate}}</h3>
-                      <div ng-repeat="lang in langs" class="col-lg-2 col-lg-offset-1 col-centered">
+                      <div ng-repeat="lang in langs" class="col-lg-3 col-lg-offset-1 col-centered">
                         <div class="c100 p{{lang.langlvl}}">
                           <span>{{lang.key | translate}} <br>{{lang.detail | translate}}</span>
                           <div class="slice">
@@ -215,7 +225,7 @@
               </div>
           <div class="row">
             <div class="col-lg-10 col-lg-offset-1 portfolio-item">
-              <div ng-repeat="project in AllProjects" class="col-sm-4 portfolio-item">
+              <div when-visible="animateElementIn" ng-repeat="project in AllProjects" class="col-sm-4 portfolio-item">
                 <div class="portfolio-contain">
                   <a href="#{{ project.key }}" class="portfolio-link" data-toggle="modal">
                     <figure>

@@ -117,7 +117,7 @@ app.controller('MainController', function ($scope, $translate, ListLangs, ListPr
                     {   title: "Twig",
             			      level: 5,}];
 
-$scope.skills_ProgOther = [{
+  $scope.skills_ProgOther = [{
                         title: "Bat",
                         level: 4,},
                     {   title: "C++",
@@ -136,7 +136,8 @@ $scope.skills_ProgOther = [{
                         level: 6,},
                     {   title: "Swift",
                         level: 2,}];
-$scope.skills_AdminWin = [{
+
+  $scope.skills_AdminWin = [{
                       title: "Active Directory",
                       level: 4,},
                   {   title: "Domaine Name System",
@@ -157,7 +158,8 @@ $scope.skills_AdminWin = [{
                       level: 2,},
                   {   title: "Windows Server Update Services",
                       level: 4,}];
-$scope.skills_AdminOther = [{
+
+  $scope.skills_AdminOther = [{
                       title: "Apache",
                       level: 6,},
                   {   title: "CentOS",
@@ -169,36 +171,44 @@ $scope.skills_AdminOther = [{
                   {   title: "OCS Inventory",
                       level: 5,}];
 
-  $scope.tools = [{
-                      title: "Adobe Illustrator",
+    $scope.tools = [{
+                      title: " Adobe Illustrator",
+                      favicon: "fa fa-object-ungroup",
               	      level: 5,
                   },
                   {
-                      title: "Adobe Photoshop",
+                      title: " Adobe Photoshop",
+                      favicon: "fa fa-camera",
               	      level: 5,
                   },
                   {
-                      title: "Atom Editor",
+                      title: " Atom Editor",
+                      favicon: "fa fa-file-text-o",
               	      level: 2,
                   },
                   {
-                      title: "Mac OS X",
+                      title: " Mac OS X",
+                      favicon: "fa fa-apple",
               	      level: 2,
                   },
                   {
-                      title: "VMware Fusion",
+                      title: " VMware Fusion",
+                      favicon: "fa fa-desktop",
               	      level: 2,
                   },
                   {
-                      title: "VMware Workstation",
+                      title: " VMware Workstation",
+                      favicon: "fa fa-bolt",
               	      level: 2,
                   },
                   {
-                      title: "Windows",
+                      title: " Windows",
+                      favicon: "fa fa-windows",
                       level: 4,
                   },
                   {
-                      title: "Windows Server",
+                      title: " Windows Server",
+                      favicon: "fa fa-windows",
               	      level: 5,
                   }];
 
